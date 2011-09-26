@@ -1,0 +1,13 @@
+=====================================
+Compiling
+=====================================
+To compile and run, use the included DirectXApplication.sln
+To compile for Release mode, just leave the default references. However, if you change to debug mode, the references to DXInteropLib have to be re-mapped for the new configuration, and (for some reason; this must be a VS11 glitch), you have to rebuild the entire solution. 
+=====================================
+Contributing
+=====================================
+If anyone's interested in contributing, feel free to fork your own branches, and submit pull requests! 
+=====================================
+Contributors
+=====================================
+Brian Bosak - Original author
