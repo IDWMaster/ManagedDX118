@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="d3629df1-acda-46ea-99cd-227671d510d8" Publisher="CN=webadm" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>DirectXApplication1</DisplayName>
+    <PublisherDisplayName>webadm</PublisherDisplayName>
+    <Logo>StoreLogo.png</Logo>
+    <Description>DirectXApplication1</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="directxapplication1.exe" EntryPoint="DirectXApplication1.App">
+      <VisualElements DisplayName="DirectXApplication1" Logo="Logo.png" SmallLogo="SmallLogo.png" Description="DirectXApplication1" ForegroundText="light" BackgroundColor="#222222">
+        <SplashScreen Image="SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+  <Dependencies>
+    <PackageDependency Name="Microsoft.VCLibs.110.Debug" MinVersion="11.0.0.0" />
+  </Dependencies>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>DXInteropLib.dll</Path>
+        <ActivatableClass ActivatableClassId="DXInteropLib.DirectContext" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="TestProgram.EntryPoint" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

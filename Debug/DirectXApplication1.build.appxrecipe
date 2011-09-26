@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SCHOOL8</Machine>
+    <WindowsUser>webadm</WindowsUser>
+    <SolutionConfiguration>Debug|Win32</SolutionConfiguration>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <Modified>2011-09-16T23:23:17.444</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\lib\platform.winmd">
+      <PackagePath>platform.winmd</PackagePath>
+      <Modified>2011-08-24T18:51:56.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DirectXApplication1.exe">
+      <PackagePath>DirectXApplication1.exe</PackagePath>
+      <Modified>2011-09-17T10:26:32.320</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DirectXApplication1.pdb">
+      <PackagePath>DirectXApplication1.pdb</PackagePath>
+      <Modified>2011-09-17T10:26:32.313</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DXInteropLib\DXInteropLib.dll">
+      <PackagePath>DXInteropLib.dll</PackagePath>
+      <Modified>2011-09-17T10:25:52.758</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DXInteropLib\DXInteropLib.pdb">
+      <PackagePath>DXInteropLib.pdb</PackagePath>
+      <Modified>2011-09-17T10:25:52.757</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DXInteropLib\DXInteropLib.winmd">
+      <PackagePath>DXInteropLib.winmd</PackagePath>
+      <Modified>2011-09-17T10:25:53.292</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2011-09-17T10:26:34.826</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\Logo.png">
+      <PackagePath>Logo.png</PackagePath>
+      <Modified>2011-08-25T02:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SmallLogo.png">
+      <PackagePath>SmallLogo.png</PackagePath>
+      <Modified>2011-08-25T02:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SplashScreen.png">
+      <PackagePath>SplashScreen.png</PackagePath>
+      <Modified>2011-08-25T02:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\StoreLogo.png">
+      <PackagePath>StoreLogo.png</PackagePath>
+      <Modified>2011-08-25T02:28:52.000</Modified>
+    </AppXPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
+      <Name>Microsoft.VCLibs.110.Debug</Name>
+      <Version>11.0.0.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.110.Debug, MinVersion = 11.0.0.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.11.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

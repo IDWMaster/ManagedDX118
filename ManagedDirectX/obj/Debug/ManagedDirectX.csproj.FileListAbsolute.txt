@@ -1,0 +1,24 @@
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.csprojResolveAssemblyReference.cache
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.dll
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.winmd
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.csprojResolveAssemblyReference.cache
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.dll
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\platform.winmd
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.pdb
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.csprojResolveAssemblyReference.cache
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.dll
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\obj\Debug\ManagedDirectX.pdb
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.winmd
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.pdb
+C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.winmd
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.dll

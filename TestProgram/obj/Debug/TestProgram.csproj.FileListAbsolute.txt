@@ -1,0 +1,33 @@
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\ManagedDirectX.dll
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.winmd
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\ManagedDirectX.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.dll
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.csprojResolveAssemblyReference.cache
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmd
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmdobj
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.compile.pdb
+\\school8\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.csprojResolveAssemblyReference.cache
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmd
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.pdb
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmdobj
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\obj\Debug\TestProgram.compile.pdb
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.winmd
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.pdb
+C:\Users\webadm\Documents\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.csprojResolveAssemblyReference.cache
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmd
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmdobj
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.compile.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\test.png
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.winmd
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.dll

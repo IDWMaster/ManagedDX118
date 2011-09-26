@@ -1,0 +1,14 @@
+﻿Build started 9/18/2011 4:24:11 PM.
+     1>Project "C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DXInteropLib\DXInteropLib.vcxproj" on node 2 (Build target(s)).
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /Fh "Debug\PixelShader.h" /Fo "C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\Debug\DXInteropLib\PixelShader.cso" PixelShader.hlsl 
+     1>C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DXInteropLib\PixelShader.hlsl(47,37-47): error X4502: invalid vs_2_0 output semantic 'SV_Target'
+         
+         compilation failed; no code produced
+         Microsoft (R) Direct3D Shader Compiler 9.30.960.8102
+         Copyright (C) Microsoft Corporation 2002-2011. All rights reserved.
+         
+     1>Done Building Project "C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DXInteropLib\DXInteropLib.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.70

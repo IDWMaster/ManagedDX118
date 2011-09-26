@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>LAPTOP8</Machine>
+    <WindowsUser>webadm</WindowsUser>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <Modified>2011-09-25T16:25:02.865</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\lib\amd64\platform.winmd">
+      <PackagePath>platform.winmd</PackagePath>
+      <Modified>2011-08-24T16:21:38.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\Logo.png">
+      <PackagePath>Logo.png</PackagePath>
+      <Modified>2011-08-25T00:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SmallLogo.png">
+      <PackagePath>SmallLogo.png</PackagePath>
+      <Modified>2011-08-25T00:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SplashScreen.png">
+      <PackagePath>SplashScreen.png</PackagePath>
+      <Modified>2011-08-25T00:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\StoreLogo.png">
+      <PackagePath>StoreLogo.png</PackagePath>
+      <Modified>2011-08-25T00:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll">
+      <PackagePath>ManagedDirectX.dll</PackagePath>
+      <Modified>2011-09-25T17:01:05.270</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb">
+      <PackagePath>TestProgram.pdb</PackagePath>
+      <Modified>2011-09-25T17:36:43.226</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd">
+      <PackagePath>TestProgram.winmd</PackagePath>
+      <Modified>2011-09-25T17:36:43.241</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\test.png">
+      <PackagePath>TestProgram\test.png</PackagePath>
+      <Modified>2011-09-18T17:41:15.435</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.exe">
+      <PackagePath>DirectXApplication1.exe</PackagePath>
+      <Modified>2011-09-25T17:36:50.651</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.pdb">
+      <PackagePath>DirectXApplication1.pdb</PackagePath>
+      <Modified>2011-09-25T17:36:50.650</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.dll">
+      <PackagePath>DXInteropLib.dll</PackagePath>
+      <Modified>2011-09-25T17:01:03.933</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.pdb">
+      <PackagePath>DXInteropLib.pdb</PackagePath>
+      <Modified>2011-09-25T17:01:03.932</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.winmd">
+      <PackagePath>DXInteropLib.winmd</PackagePath>
+      <Modified>2011-09-25T17:01:03.994</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\PixelShader.cso">
+      <PackagePath>DXInteropLib\PixelShader.cso</PackagePath>
+      <Modified>2011-09-25T16:03:55.891</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\VertexShader.cso">
+      <PackagePath>DXInteropLib\VertexShader.cso</PackagePath>
+      <Modified>2011-09-25T16:02:16.862</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2011-09-25T17:36:51.574</Modified>
+    </AppXPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
+      <Name>Microsoft.VCLibs.110.Debug</Name>
+      <Version>11.0.0.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.110.Debug, MinVersion = 11.0.0.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.11.appx</AppxLocation>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

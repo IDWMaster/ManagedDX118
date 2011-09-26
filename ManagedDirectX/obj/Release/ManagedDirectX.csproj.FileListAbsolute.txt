@@ -1,0 +1,8 @@
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Release\ManagedDirectX.csprojResolveAssemblyReference.cache
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\ManagedDirectX.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\ManagedDirectX.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\DXInteropLib.winmd
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\DXInteropLib.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Release\ManagedDirectX.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Release\ManagedDirectX.pdb
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\DXInteropLib.dll
