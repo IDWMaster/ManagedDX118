@@ -4,4 +4,7 @@
     <DebuggerType>Mixed</DebuggerType>
     <DebuggerFlavor>ImmersiveLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
 </Project>

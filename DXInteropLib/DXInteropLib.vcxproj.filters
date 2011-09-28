@@ -21,6 +21,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="WinRTComponent.h" />
     <ClInclude Include="..\DirectXApplication1\ViewProvider.h" />
+    <ClInclude Include="BasicMath.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="VertexShader.hlsl" />

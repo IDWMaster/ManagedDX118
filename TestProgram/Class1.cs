@@ -86,7 +86,7 @@ namespace TestProgram
                 byte[] rawdata;
                 if (!founddata)
                 {
-                    file = await folder.GetFileAsync("TestProgram\\test.png");
+                    file = await folder.GetFileAsync("TestProgram\\test.jpg");
                     stream = await file.OpenAsync(FileAccessMode.Read);
                     var decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(stream);
                     var pixeldata = await decoder.GetPixelDataAsync(Windows.Graphics.Imaging.BitmapPixelFormat.Rgba8, Windows.Graphics.Imaging.BitmapAlphaMode.Straight, new Windows.Graphics.Imaging.BitmapTransform(), Windows.Graphics.Imaging.ExifOrientationMode.IgnoreExifOrientation, Windows.Graphics.Imaging.ColorManagementMode.DoNotColorManage);

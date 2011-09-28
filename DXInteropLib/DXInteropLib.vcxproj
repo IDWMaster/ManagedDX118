@@ -439,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXApplication1\ViewProvider.h" />
+    <ClInclude Include="BasicMath.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="WinRTComponent.h" />
   </ItemGroup>

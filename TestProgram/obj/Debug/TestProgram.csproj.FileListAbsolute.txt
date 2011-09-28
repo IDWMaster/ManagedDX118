@@ -27,7 +27,8 @@ C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProg
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.winmdobj
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Debug\TestProgram.compile.pdb
-C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\test.png
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.winmd
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\test.jpg
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\test_.png
