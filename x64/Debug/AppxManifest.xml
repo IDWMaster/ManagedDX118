@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="d3629df1-acda-46ea-99cd-227671d510d8" Publisher="CN=webadm" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <Identity Name="d3629df1-acda-46ea-99cd-227671d510d8" Publisher="CN=webadm" Version="1.0.0.1" ProcessorArchitecture="x64" />
   <Properties>
     <DisplayName>DirectXApplication1</DisplayName>
     <PublisherDisplayName>webadm</PublisherDisplayName>
@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="directxapplication1.exe" EntryPoint="DirectXApplication1.App">
-      <VisualElements DisplayName="DirectXApplication1" Logo="Logo.png" SmallLogo="SmallLogo.png" Description="DirectXApplication1" ForegroundText="light" BackgroundColor="#222222">
+      <VisualElements DisplayName="DirectXApplication1" Logo="Logo.png" SmallLogo="SmallLogo.png" Description="DirectXApplication1" ForegroundText="light" BackgroundColor="#222222" InitialRotationPreference="portrait">
         <SplashScreen Image="SplashScreen.png" />
       </VisualElements>
     </Application>

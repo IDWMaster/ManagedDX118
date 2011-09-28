@@ -19,6 +19,7 @@ namespace DXInteropLib
 	 void BindVertexBuffer(void* vertbuffer, int stride);
 	 void Draw(int vertcount);
 	 void InitializeInputLayout(array<byte>^ shaderbytecode);
+	 void ApplyTexture(void* texture);
  private:
 	 RenderLoopArgs^ loophandler;
 	 Microsoft::WRL::ComPtr<ID3D11DeviceContext> underlyingcontext;

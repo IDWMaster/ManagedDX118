@@ -117,6 +117,7 @@ namespace TestProgram
                     treader.ReadBytes(rawdata);
                 }
                 Texture2D mtex = maincontext.createTexture2D(rawdata, width, height);
+                mtex.Draw();
                 List<VertexPositionNormalTexture> triangle = new List<VertexPositionNormalTexture>();
                 triangle.Add(new VertexPositionNormalTexture(new Vector3(-.5f,-.5f,0),new Vector3(1,1,1),new Vector2(0,0)));
                 triangle.Add(new VertexPositionNormalTexture(new Vector3(0,0.5f,0),new Vector3(1,1,1),new Vector2(1,0)));

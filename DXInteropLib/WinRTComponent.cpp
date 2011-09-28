@@ -100,12 +100,14 @@ namespace DXInteropLib {
 		description.Usage = D3D11_USAGE::D3D11_USAGE_DEFAULT;
 		description.Width = (UINT)width;
 		description.Height = (UINT)height;
-		description.Format = DXGI_FORMAT::DXGI_FORMAT_R8G8B8A8_TYPELESS;
+		description.Format = DXGI_FORMAT::DXGI_FORMAT_R8G8B8A8_UNORM;
 		description.ArraySize = 1;
 		description.MipLevels = 1;
+		description.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 		D3D11_SUBRESOURCE_DATA mdat;
 		memset(&mdat,0,sizeof(mdat));
 		description.SampleDesc.Count = 1;
+		//4 bytes per pixel
 		mdat.SysMemPitch = 4*width;
 		byte* rdata = data->Data;
 		mdat.pSysMem = rdata;
@@ -114,6 +116,18 @@ namespace DXInteropLib {
 		ID3D11Texture2D* texture;
 		HRESULT mresult = underlyingDevicePtr->CreateTexture2D(&description,tdat,&texture);
 		return texture;
+	};
+	void DirectContext::ApplyTexture(void* sender) {
+	D3D11_SHADER_RESOURCE_VIEW_DESC textureViewDescription;
+	memset(&textureViewDescription,0,sizeof(textureViewDescription));
+	textureViewDescription.Format = DXGI_FORMAT::DXGI_FORMAT_R8G8B8A8_UNORM;
+	textureViewDescription.Texture2D.MipLevels = 1;
+	textureViewDescription.Texture2D.MostDetailedMip = 0;
+	textureViewDescription.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+	Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> realview;
+	ID3D11Texture2D* texture = (ID3D11Texture2D*)sender;
+	underlyingDevicePtr->CreateShaderResourceView(texture,&textureViewDescription,&realview);
+	underlyingcontext->PSSetShaderResources(0,1,realview.GetAddressOf());
 	};
 	void DirectContext::InitializeInputLayout(array<byte>^ shader) {
 	D3D11_INPUT_ELEMENT_DESC* VertexPositionNormalTexture = new D3D11_INPUT_ELEMENT_DESC[3];
@@ -156,6 +170,34 @@ namespace DXInteropLib {
 	throw "Error creating layout!";
 	}
 	underlyingcontext->IASetInputLayout(layout);
+	//SHOULD: Set sampler states. Might not work if pixel shader hasn't been set yet though.....
+
+
+
+
+
+
+
+
+
+	D3D11_SAMPLER_DESC samplerDescription;
+	memset(&samplerDescription,0,sizeof(samplerDescription));
+	samplerDescription.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+	samplerDescription.MaxAnisotropy = 0;
+	samplerDescription.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescription.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescription.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+	samplerDescription.MipLODBias = 0.0f;
+	samplerDescription.MinLOD = 0;
+	samplerDescription.MaxLOD = D3D11_FLOAT32_MAX;
+	samplerDescription.ComparisonFunc = D3D11_COMPARISON_NEVER;
+	samplerDescription.BorderColor[0] = 0.0f;
+    samplerDescription.BorderColor[1] = 0.0f;
+    samplerDescription.BorderColor[2] = 0.0f;
+    samplerDescription.BorderColor[3] = 0.0f;
+	Microsoft::WRL::ComPtr<ID3D11SamplerState> sampler;
+	underlyingDevicePtr->CreateSamplerState(&samplerDescription,&sampler);
+	underlyingcontext->PSSetSamplers(0,1,sampler.GetAddressOf());
 	};
 	void DirectContext::Draw(int vertcount) {
 		underlyingcontext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);

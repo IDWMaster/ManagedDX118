@@ -37,17 +37,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <SDKReference Include="Microsoft.VCLibs, Version=11.0" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DXInteropLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\x64\Release\DXInteropLib\DXInteropLib.winmd</HintPath>
+      <HintPath>..\x64\Debug\DXInteropLib\DXInteropLib.winmd</HintPath>
+    </Reference>
+    <Reference Include="platform, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\VC\lib\amd64\platform.winmd</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v1.0\Microsoft.Windows.UI.Xaml.CSharp.targets" />

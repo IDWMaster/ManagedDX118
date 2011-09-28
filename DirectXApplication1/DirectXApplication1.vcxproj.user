@@ -5,4 +5,8 @@
     <DebuggerFlavor>ImmersiveLocalDebugger</DebuggerFlavor>
     <EnableVsGraphicsCapture>true</EnableVsGraphicsCapture>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerType>Mixed</DebuggerType>
+    <DebuggerFlavor>ImmersiveLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

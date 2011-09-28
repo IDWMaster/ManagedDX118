@@ -25,7 +25,7 @@ struct PixelShaderInput
 //--------------------------------------------------------------------------------------
 float4 main(PixelShaderInput input) : SV_Target
 {
-    return float4(1.0,1.0,1.0,1.0);
-   //return diffuseTexture.Sample(linearSampler, input.textureUV);
+    //return float4(1.0,1.0,1.0,1.0);
+   return diffuseTexture.Sample(linearSampler, input.textureUV);
 }
 //--------------------------------------------------------------------------------------

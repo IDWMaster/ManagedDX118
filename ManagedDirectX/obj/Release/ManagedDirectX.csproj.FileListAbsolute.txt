@@ -6,3 +6,4 @@ C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedD
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Release\ManagedDirectX.dll
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\obj\Release\ManagedDirectX.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\platform.winmd

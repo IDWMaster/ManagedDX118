@@ -8,7 +8,7 @@
   <ItemGroup>
     <AppXManifest Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
-      <Modified>2011-09-25T16:25:02.865</Modified>
+      <Modified>2011-09-27T19:13:50.828</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -34,15 +34,15 @@
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll">
       <PackagePath>ManagedDirectX.dll</PackagePath>
-      <Modified>2011-09-25T17:01:05.270</Modified>
+      <Modified>2011-09-27T19:19:27.798</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb">
       <PackagePath>TestProgram.pdb</PackagePath>
-      <Modified>2011-09-25T17:36:43.226</Modified>
+      <Modified>2011-09-27T19:19:29.311</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd">
       <PackagePath>TestProgram.winmd</PackagePath>
-      <Modified>2011-09-25T17:36:43.241</Modified>
+      <Modified>2011-09-27T19:19:29.330</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\test.png">
       <PackagePath>TestProgram\test.png</PackagePath>
@@ -50,27 +50,27 @@
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.exe">
       <PackagePath>DirectXApplication1.exe</PackagePath>
-      <Modified>2011-09-25T17:36:50.651</Modified>
+      <Modified>2011-09-27T19:19:36.606</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.pdb">
       <PackagePath>DirectXApplication1.pdb</PackagePath>
-      <Modified>2011-09-25T17:36:50.650</Modified>
+      <Modified>2011-09-27T19:19:36.605</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.dll">
       <PackagePath>DXInteropLib.dll</PackagePath>
-      <Modified>2011-09-25T17:01:03.933</Modified>
+      <Modified>2011-09-27T19:19:26.539</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.pdb">
       <PackagePath>DXInteropLib.pdb</PackagePath>
-      <Modified>2011-09-25T17:01:03.932</Modified>
+      <Modified>2011-09-27T19:19:26.539</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.winmd">
       <PackagePath>DXInteropLib.winmd</PackagePath>
-      <Modified>2011-09-25T17:01:03.994</Modified>
+      <Modified>2011-09-27T19:19:26.617</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\PixelShader.cso">
       <PackagePath>DXInteropLib\PixelShader.cso</PackagePath>
-      <Modified>2011-09-25T16:03:55.891</Modified>
+      <Modified>2011-09-27T19:13:34.847</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\VertexShader.cso">
       <PackagePath>DXInteropLib\VertexShader.cso</PackagePath>
@@ -78,7 +78,7 @@
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2011-09-25T17:36:51.574</Modified>
+      <Modified>2011-09-27T19:19:37.853</Modified>
     </AppXPackagedFile>
   </ItemGroup>
   <ItemGroup>

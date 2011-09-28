@@ -9,8 +9,20 @@ namespace ManagedDirectX
     public sealed class Texture2D
     {
         IntPtr internhandle;
-        internal Texture2D(IntPtr handle)
+        /// <summary>
+        /// Maps the current texture to the shader
+        /// </summary>
+        public void Draw()
         {
+            unsafe
+            {
+                itext.underlyingcontext.ApplyTexture(internhandle.ToPointer());
+            }
+        }
+        RenderContext itext;
+        internal Texture2D(IntPtr handle, RenderContext context)
+        {
+            itext = context;
             internhandle = handle;
             if (handle == IntPtr.Zero)
             {
@@ -110,7 +122,7 @@ namespace ManagedDirectX
         {
             unsafe
             {
-                return new Texture2D(new IntPtr(underlyingcontext.CreateTexture2D(data, width, height)));
+                return new Texture2D(new IntPtr(underlyingcontext.CreateTexture2D(data, width, height)),this);
             }
         }
         /// <summary>

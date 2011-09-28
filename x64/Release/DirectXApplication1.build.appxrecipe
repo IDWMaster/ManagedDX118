@@ -1,84 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>SCHOOL8</Machine>
+    <Machine>LAPTOP8</Machine>
     <WindowsUser>webadm</WindowsUser>
     <SolutionConfiguration>Release|x64</SolutionConfiguration>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
-      <Modified>2011-09-25T20:07:39.889</Modified>
+      <Modified>2011-09-27T18:50:51.919</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\lib\amd64\platform.winmd">
       <PackagePath>platform.winmd</PackagePath>
-      <Modified>2011-08-24T18:21:38.000</Modified>
+      <Modified>2011-08-24T16:21:38.000</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\Logo.png">
       <PackagePath>Logo.png</PackagePath>
-      <Modified>2011-08-25T02:28:52.000</Modified>
+      <Modified>2011-08-25T00:28:52.000</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SmallLogo.png">
       <PackagePath>SmallLogo.png</PackagePath>
-      <Modified>2011-08-25T02:28:52.000</Modified>
+      <Modified>2011-08-25T00:28:52.000</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\SplashScreen.png">
       <PackagePath>SplashScreen.png</PackagePath>
-      <Modified>2011-08-25T02:28:52.000</Modified>
+      <Modified>2011-08-25T00:28:52.000</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\DirectXApplication1\StoreLogo.png">
       <PackagePath>StoreLogo.png</PackagePath>
-      <Modified>2011-08-25T02:28:52.000</Modified>
+      <Modified>2011-08-25T00:28:52.000</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Release\ManagedDirectX.dll">
       <PackagePath>ManagedDirectX.dll</PackagePath>
-      <Modified>2011-09-25T20:46:06.701</Modified>
+      <Modified>2011-09-27T19:11:25.244</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\TestProgram.pdb">
       <PackagePath>TestProgram.pdb</PackagePath>
-      <Modified>2011-09-25T20:46:15.524</Modified>
+      <Modified>2011-09-27T19:11:26.687</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\TestProgram.winmd">
       <PackagePath>TestProgram.winmd</PackagePath>
-      <Modified>2011-09-25T20:46:15.565</Modified>
+      <Modified>2011-09-27T19:11:26.705</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\test.png">
       <PackagePath>TestProgram\test.png</PackagePath>
-      <Modified>2011-09-18T19:41:15.435</Modified>
+      <Modified>2011-09-18T17:41:15.435</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DirectXApplication1.exe">
       <PackagePath>DirectXApplication1.exe</PackagePath>
-      <Modified>2011-09-25T20:46:52.629</Modified>
+      <Modified>2011-09-27T19:11:34.099</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DirectXApplication1.pdb">
       <PackagePath>DirectXApplication1.pdb</PackagePath>
-      <Modified>2011-09-25T20:46:51.892</Modified>
+      <Modified>2011-09-27T19:11:33.979</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DXInteropLib\DXInteropLib.dll">
       <PackagePath>DXInteropLib.dll</PackagePath>
-      <Modified>2011-09-25T20:45:56.739</Modified>
+      <Modified>2011-09-27T18:59:32.320</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DXInteropLib\DXInteropLib.pdb">
       <PackagePath>DXInteropLib.pdb</PackagePath>
-      <Modified>2011-09-25T20:45:57.046</Modified>
+      <Modified>2011-09-27T18:59:32.445</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DXInteropLib\DXInteropLib.winmd">
       <PackagePath>DXInteropLib.winmd</PackagePath>
-      <Modified>2011-09-25T20:45:56.153</Modified>
+      <Modified>2011-09-27T18:59:32.273</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DXInteropLib\PixelShader.cso">
       <PackagePath>DXInteropLib\PixelShader.cso</PackagePath>
-      <Modified>2011-09-25T19:53:54.750</Modified>
+      <Modified>2011-09-27T18:59:27.483</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\DXInteropLib\VertexShader.cso">
       <PackagePath>DXInteropLib\VertexShader.cso</PackagePath>
-      <Modified>2011-09-25T19:53:54.782</Modified>
+      <Modified>2011-09-27T18:59:27.514</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2011-09-25T20:46:56.016</Modified>
+      <Modified>2011-09-27T19:11:34.690</Modified>
     </AppXPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -22,3 +22,4 @@ C:\Users\webadm\Documents\DirectXApplication1\ManagedDirectX\bin\Debug\DXInterop
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.winmd
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\platform.winmd
