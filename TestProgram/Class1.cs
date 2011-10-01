@@ -129,6 +129,8 @@ namespace TestProgram
                 vertcount = 3;
                 Windows.UI.Popups.MessageDialog tdlg = new Windows.UI.Popups.MessageDialog("Unit tests successfully completed\nShader creation: Success\nTexture load: Success\nVertex buffer creation: Success\nTime:"+(DateTime.Now-started).ToString(), "Results");
                 tdlg.ShowAsync().Start();
+                DXMatrix mtrix = maincontext.createMatrix(true);
+
             }
             catch (Exception er)
             {

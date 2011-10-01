@@ -24,6 +24,8 @@ public:
     void Clear();
 
 private:
+	UINT pcode;
+	ID3D11DepthStencilState* rstate;
     Windows::UI::Core::CoreWindow^ m_window;
     Microsoft::WRL::ComPtr<ID3D11Device> m_d3dDevice;
     Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_d3dContext;

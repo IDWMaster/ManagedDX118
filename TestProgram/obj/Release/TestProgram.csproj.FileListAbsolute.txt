@@ -1,5 +1,4 @@
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Release\TestProgram.csprojResolveAssemblyReference.cache
-C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\test.png
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\TestProgram.winmd
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\TestProgram.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\DXInteropLib.winmd
@@ -9,3 +8,5 @@ C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProg
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Release\TestProgram.winmdobj
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\obj\Release\TestProgram.compile.pdb
 C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\DXInteropLib.dll
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\test.jpg
+C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Release\test_.png

@@ -1,13 +1,19 @@
 ﻿#pragma once
 #include <d3d11.h>
+#include "BasicMath.h"
+#include "BasicCamera.h"
+#include "matdata.h"
+#ifndef WinRTComponent_H
+#define WinRTComponent_H
 using namespace Windows::Foundation;
 namespace DXInteropLib
 {
 	public delegate void RenderLoopArgs();
- public ref class DirectContext {
+	
+	public ref class DirectContext sealed {
  public:
 	 
-	 DirectContext(void* sender, void* context);
+	 DirectContext(void* sender, void* context, float width, float height);
 	 void* CreateVertexShader(array<byte>^ vertfile, array<byte>^ pixfile);
 	 static DirectContext^ getDefaultContext();
 	 void ApplyVertexShader(void* input);
@@ -20,7 +26,14 @@ namespace DXInteropLib
 	 void Draw(int vertcount);
 	 void InitializeInputLayout(array<byte>^ shaderbytecode);
 	 void ApplyTexture(void* texture);
+	 ///<summary>Creates a constant buffer with the specified data and size</summary>
+	 void* CreateConstantBuffer(void* data, UINT size);
+	 void* CreateMatrix(bool withcamera);
+	 void UpdateMatrixCamera(void* matrixptr,array<float>^ position, array<float>^ lookat);
+	 
  private:
+	float _width;
+	float _height;
 	 RenderLoopArgs^ loophandler;
 	 Microsoft::WRL::ComPtr<ID3D11DeviceContext> underlyingcontext;
 	 Microsoft::WRL::ComPtr<ID3D11Device> underlyingDevicePtr;
@@ -33,6 +46,25 @@ namespace DXInteropLib
 	 Microsoft::WRL::ComPtr<ID3D11VertexShader> shader;
 	 Microsoft::WRL::ComPtr<ID3D11PixelShader> pixelshader;
 	};
- 
+ class Matrix  {
+public:
+	void Initialize();
+	//Creates a default camera defining the view and projection matrices
+	static Matrix CreateDefaultCamera(float width, float height);
+	///<summary>Uploads this matrix to the GPU</summary>
+	void* UploadMatrix(DirectContext^ context);
+	void SetCameraProperties(array<float>^ cameraposition, array<float>^ lookat);
+	
+private:
+	
+	///A pointer to the underlying buffer on the GPU
+	void* gpubuffer;
+	bool hasModelViewProjection;
+	///A single matrix. Used only if hasModelViewProjection is set to FALSE.
+	float4x4 singlematrix;
+	BasicCamera^ underlyingcamera;
+	GPUMatrixData underlyingmatrices;
+};
 // WinRTComponent.h
 }
+#endif

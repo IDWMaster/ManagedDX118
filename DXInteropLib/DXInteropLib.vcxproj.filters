@@ -16,12 +16,17 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="WinRTComponent.cpp" />
+    <ClCompile Include="BasicCamera.cpp" />
+    <ClCompile Include="DirectMatrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="WinRTComponent.h" />
     <ClInclude Include="..\DirectXApplication1\ViewProvider.h" />
     <ClInclude Include="BasicMath.h" />
+    <ClInclude Include="BasicCamera.h" />
+    <ClInclude Include="DirectMatrix.h" />
+    <ClInclude Include="matdata.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="VertexShader.hlsl" />

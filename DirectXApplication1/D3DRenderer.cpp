@@ -45,8 +45,9 @@ void D3DRenderer::Initialize()
     CreateDeviceResources();
     CreateWindowSizeDependentResources();
 	void* mptr = ((void*)m_d3dDevice.GetAddressOf());
-	
-	managedcontext = ref new DXInteropLib::DirectContext(mptr,(void*)m_d3dContext.GetAddressOf());
+	float width = m_window->Bounds.Width;
+	float height = m_window->Bounds.Height;
+	managedcontext = ref new DXInteropLib::DirectContext(mptr,(void*)m_d3dContext.GetAddressOf(),width,height);
 	
 	auto proginstance = ref new TestProgram::EntryPoint();
 }
@@ -68,18 +69,23 @@ void D3DRenderer::CreateDeviceResources()
 #endif
 
     // This array defines the ordering of feature levels that D3D should attempt to create
+	
     D3D_FEATURE_LEVEL featureLevels[] = 
     {
         D3D_FEATURE_LEVEL_11_1,
         D3D_FEATURE_LEVEL_11_0,
         D3D_FEATURE_LEVEL_10_1,
         D3D_FEATURE_LEVEL_10_0,
-        D3D_FEATURE_LEVEL_9_3
+        D3D_FEATURE_LEVEL_9_3,
+		D3D_FEATURE_LEVEL_9_2//,
+		//Comment this line out to enable compatibility with Samsung netbooks,
+		//at the cost of lower performance on some machines that could
+		//maybe properly support this profile
+	//	D3D_FEATURE_LEVEL_9_1
     };
 
     ComPtr<ID3D11Device> device;
     ComPtr<ID3D11DeviceContext> context;
-	m_featureLevel = D3D_FEATURE_LEVEL_9_3;
 	//IDXGIAdapter* adapt;
 	//IDXGIFactory* fact;
 	//CreateDXGIFactory(__uuidof(IDXGIFactory),(void**)&fact);
@@ -172,12 +178,12 @@ void D3DRenderer::CreateWindowSizeDependentResources()
             );
 
         ComPtr<IDXGIFactory2> dxgiFactory;
-        DX::ThrowIfFailed(
-            dxgiAdapter->GetParent(
+       
+           HRESULT msult = dxgiAdapter->GetParent(
                 __uuidof(IDXGIFactory2), 
                 &dxgiFactory
-                )
-            );
+                );
+           
 		
         DX::ThrowIfFailed(
             dxgiFactory->CreateSwapChainForImmersiveWindow(
@@ -198,7 +204,7 @@ void D3DRenderer::CreateWindowSizeDependentResources()
             &backBuffer
             )
         );
-
+	
     DX::ThrowIfFailed(
         m_d3dDevice->CreateRenderTargetView(
             backBuffer.Get(),
@@ -209,11 +215,12 @@ void D3DRenderer::CreateWindowSizeDependentResources()
 
     D3D11_TEXTURE2D_DESC backBufferDesc = {0};
     backBuffer->GetDesc(&backBufferDesc);
-
+	//TODO: Width, height should be backbuffer.width and backbuffer.height
+	
     CD3D11_TEXTURE2D_DESC depthStencilDesc(
         DXGI_FORMAT_D24_UNORM_S8_UINT, 
-        backBufferDesc.Width,
-        backBufferDesc.Height,
+		backBufferDesc.Width,
+		backBufferDesc.Height,
         1,
         1,
         D3D11_BIND_DEPTH_STENCIL);
@@ -300,10 +307,14 @@ void D3DRenderer::Present()
 void D3DRenderer::Clear()
 {
     const float color[4] = { 0, 0, 1, 1.0f };
-    m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(), m_depthStencilView.Get());
-    m_d3dContext->ClearRenderTargetView(m_renderTargetView.Get(), color);
+	//Fails on Samsung netbooks for some reason (setrendertargets)
+	
+		m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(),m_depthStencilView.Get());
+	
+		m_d3dContext->ClearRenderTargetView(m_renderTargetView.Get(), color);
     m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);
-}
+	}
+	
 
 void D3DRenderer::DiscardDeviceResources()
 {

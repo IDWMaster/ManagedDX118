@@ -9,7 +9,77 @@
 using namespace DXInteropLib;
 namespace DXInteropLib {
 	//Context
-	DirectContext::DirectContext(void* sender, void* context) {
+	void Matrix::Initialize() {
+	singlematrix = float4x4(0);
+	hasModelViewProjection = false;
+
+};
+void* Matrix::UploadMatrix(DirectContext^ context) {
+	if(hasModelViewProjection) {
+	//Upload the MVP matrices to the GPU
+		gpubuffer =  context->CreateConstantBuffer(&underlyingmatrices,sizeof(underlyingmatrices));
+	}else {
+		gpubuffer =  context->CreateConstantBuffer(&singlematrix,sizeof(singlematrix));
+	}
+	return gpubuffer;
+
+};
+void DirectContext::UpdateMatrixCamera(void* matptr,array<float>^ position, array<float>^ lookat) {
+	Matrix* mtr = (Matrix*)matptr;
+	mtr->SetCameraProperties(position,lookat);
+	
+};
+void* DirectContext::CreateMatrix(bool withcamera) {
+	Matrix* mtptr;
+if(withcamera) {
+	
+	mtptr = &Matrix::CreateDefaultCamera(_width,_height);
+} else {
+Matrix mtrix;
+mtrix.Initialize();
+mtptr = &mtrix;
+}
+mtptr->UploadMatrix(this);
+return mtptr;
+};
+Matrix Matrix::CreateDefaultCamera(float width, float height) {
+	//Camera faces forward by default
+	//underlyingcamera = ref new BasicCamera();
+	float aspect = width/height;
+	Matrix mtrix;
+	mtrix.Initialize();
+	mtrix.underlyingmatrices.model = float4x4();
+	mtrix.underlyingmatrices.projection = float4x4();
+	mtrix.underlyingmatrices.view = float4x4();
+	mtrix.underlyingcamera = ref new BasicCamera();
+	mtrix.underlyingcamera->SetProjectionParameters(1,aspect,1,9999999);
+	mtrix.underlyingcamera->SetViewParameters(float3(0,0,0),float3(0,0,1),float3(0,1,0));
+	mtrix.underlyingcamera->GetViewMatrix(&mtrix.underlyingmatrices.view);
+	mtrix.underlyingcamera->GetProjectionMatrix(&mtrix.underlyingmatrices.projection);
+	mtrix.hasModelViewProjection = true;
+	return mtrix;
+};
+void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat) {
+	
+	underlyingcamera->SetViewParameters(float3(campos->Data[0],campos->Data[1],campos->Data[2]),float3(lat->Data[0],lat->Data[1],lat->Data[2]),float3(0,1,0));
+};
+	void* DirectContext::CreateConstantBuffer(void* data, UINT size) {
+		//TODO: Finish this
+		D3D11_BUFFER_DESC description;
+		memset(&description,0,sizeof(description));
+		description.ByteWidth = size;
+		description.Usage = D3D11_USAGE_DEFAULT;
+		description.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+		
+		ID3D11Buffer* buffer;
+		//Don't upload the matrix to the GPU yet....
+		underlyingDevicePtr->CreateBuffer(&description,nullptr,&buffer);
+		//Upload the matrix to the GPU here instead. This also serves as an update
+		//mechanism. 
+		underlyingcontext->UpdateSubresource(buffer,0,nullptr,data,0,0);
+		return buffer;
+	};
+	DirectContext::DirectContext(void* sender, void* context, float width, float height) {
         //Device initialization
 		
 		auto currentinstance = this;
@@ -19,6 +89,8 @@ namespace DXInteropLib {
 		underlyingDevicePtr = *device;
 		underlyingcontext = *con;
 		currentcontext = this;
+		_width = width;
+		_height = height;
 		//End device initialization
 		
 	};

@@ -439,11 +439,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXApplication1\ViewProvider.h" />
+    <ClInclude Include="BasicCamera.h" />
     <ClInclude Include="BasicMath.h" />
+    <ClInclude Include="DirectMatrix.h" />
+    <ClInclude Include="matdata.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="WinRTComponent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasicCamera.cpp" />
+    <ClCompile Include="DirectMatrix.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

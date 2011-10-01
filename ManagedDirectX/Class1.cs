@@ -6,6 +6,37 @@ using System.Threading.Tasks;
 using DXInteropLib;
 namespace ManagedDirectX
 {
+    public struct Vector3D
+    {
+        public Vector3D(float x, float y, float z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+        public float X, Y, Z;
+    }
+    public sealed class DXMatrix
+    {
+        internal IntPtr internhandle;
+        internal RenderContext interncontext;
+        internal DXMatrix(IntPtr handle, RenderContext context)
+        {
+            internhandle = handle;
+            interncontext = context;
+        }
+        internal bool hasCamera = false;
+        public void SetCameraProperties(Vector3D cameraPosition, Vector3D cameraRotation)
+        {
+            if (hasCamera)
+            {
+                unsafe
+                {
+                    interncontext.underlyingcontext.UpdateMatrixCamera(internhandle.ToPointer(), new float[] { cameraPosition.X, cameraPosition.Y, cameraPosition.Z }, new float[] { cameraRotation.X, cameraRotation.Y, cameraRotation.Z });
+                }
+            }
+        }
+    }
     public sealed class Texture2D
     {
         IntPtr internhandle;
@@ -76,6 +107,36 @@ namespace ManagedDirectX
     }
     public sealed class RenderContext
     {
+        /// <summary>
+        /// Creates a matrix and uploads it to the GPU
+        /// </summary>
+        /// <param name="cameraMatrix">Whether or not this matrix includes a Projection and a View component</param>
+        /// <returns></returns>
+        public DXMatrix createMatrix(bool cameraMatrix)
+        {
+            unsafe
+            {
+                DXMatrix mtrix;
+
+                if (cameraMatrix)
+                {
+
+                    mtrix = new DXMatrix(new IntPtr(underlyingcontext.CreateMatrix(true)),this);
+                    mtrix.hasCamera = true;
+
+                }
+                else
+                {
+                    
+                    mtrix = new DXMatrix(new IntPtr(underlyingcontext.CreateMatrix(false)),this);
+                    mtrix.hasCamera = false;
+
+                }
+                
+                
+                return mtrix;
+            }
+        }
         internal DirectContext underlyingcontext;
         public RenderContext()
         {

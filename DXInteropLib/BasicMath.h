@@ -4,9 +4,8 @@
 //// PARTICULAR PURPOSE.
 ////
 //// Copyright (c) Microsoft Corporation. All rights reserved
-
+#include "pch.h"
 #pragma once
-
 #define _USE_MATH_DEFINES
 #include <math.h>
 

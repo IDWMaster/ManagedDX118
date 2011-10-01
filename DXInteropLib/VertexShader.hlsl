@@ -6,13 +6,15 @@
 // Copyright (c) Microsoft Corporation. All rights reserved
 //--------------------------------------------------------------------------------------
 
-//--------------------------------------------------------------------------------------
-// Constant Buffer Variables
-//--------------------------------------------------------------------------------------
 Texture2D diffuseTexture : register(t0);
 SamplerState linearSampler : register(s0);
-
-//--------------------------------------------------------------------------------------
+//The constant buffer on the GPU at register B0 (buffer 0)
+cbuffer Matrices : register( b0 )
+{
+    matrix model;
+    matrix view;
+    matrix projection;
+};
 struct VertextShaderInput
 {
     float3 position : POSITION;
@@ -32,7 +34,7 @@ struct PixelShaderOutput
 PixelShaderOutput main(VertextShaderInput input)
 {
     PixelShaderOutput output = (PixelShaderOutput)0;
-
+	//TODO: Matrix multiplication
     output.position = float4(input.position,1.0);
     output.textureUV = input.textureUV;
 
