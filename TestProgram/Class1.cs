@@ -20,12 +20,20 @@ namespace TestProgram
             
             beginexecblock();
         }
+        float rotation = 0;
         void onrenderframe()
         {
             if(vertcount>0) {
+                if (defaultmatrix != null)
+                {
+                    defaultmatrix.SetModelRotation(0, rotation, 0);
+                }
             maincontext.Draw(vertcount);
                 }
+            rotation += 0.1f;
+
         }
+        DXMatrix defaultmatrix;
         int vertcount = 0;
         Shader defaultshader;
         RenderContext maincontext;
@@ -119,18 +127,25 @@ namespace TestProgram
                 Texture2D mtex = maincontext.createTexture2D(rawdata, width, height);
                 mtex.Draw();
                 List<VertexPositionNormalTexture> triangle = new List<VertexPositionNormalTexture>();
-                triangle.Add(new VertexPositionNormalTexture(new Vector3(-.5f,-.5f,0),new Vector3(1,1,1),new Vector2(0,0)));
-                triangle.Add(new VertexPositionNormalTexture(new Vector3(0,0.5f,0),new Vector3(1,1,1),new Vector2(1,0)));
-                triangle.Add(new VertexPositionNormalTexture(new Vector3(.5f,-0.5f,0),new Vector3(1,1,1),new Vector2(1,1)));
+                float z = 0;
+               
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0,0,z),new Vector3(1,1,1),new Vector2(0,0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1,1,z),new Vector3(1,1,1),new Vector2(1,1)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0,1,z),new Vector3(1,1,1),new Vector2(0,1)));
+                //Triangle 2
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1,0,z),new Vector3(1,1,1),new Vector2(1,0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z), new Vector3(1, 1, 1), new Vector2(1, 1)));
+               // triangle.Reverse();
                 byte[] gpudata = VertexPositionNormalTexture.Serialize(triangle.ToArray());
                 
                 VertexBuffer mbuffer = maincontext.createVertexBuffer(gpudata,VertexPositionNormalTexture.Size);
                 mbuffer.Apply(VertexPositionNormalTexture.Size);
-                vertcount = 3;
+                vertcount = triangle.Count;
                 Windows.UI.Popups.MessageDialog tdlg = new Windows.UI.Popups.MessageDialog("Unit tests successfully completed\nShader creation: Success\nTexture load: Success\nVertex buffer creation: Success\nTime:"+(DateTime.Now-started).ToString(), "Results");
                 tdlg.ShowAsync().Start();
-                DXMatrix mtrix = maincontext.createMatrix(true);
-
+                defaultmatrix = maincontext.createMatrix(true);
+                defaultmatrix.Activate(0);
             }
             catch (Exception er)
             {

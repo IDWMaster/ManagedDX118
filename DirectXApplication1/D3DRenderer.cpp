@@ -44,6 +44,21 @@ void D3DRenderer::Initialize()
     CreateDeviceIndependentResources();
     CreateDeviceResources();
     CreateWindowSizeDependentResources();
+	Microsoft::WRL::ComPtr<ID3D11RasterizerState> mstate;
+
+	D3D11_RASTERIZER_DESC desc;
+	desc.AntialiasedLineEnable = FALSE;
+	desc.CullMode = D3D11_CULL_NONE;
+	desc.DepthBias = 0;
+	desc.DepthBiasClamp = 0;
+	desc.DepthClipEnable = TRUE;
+	desc.FillMode = D3D11_FILL_SOLID;
+	desc.FrontCounterClockwise = FALSE;
+	desc.MultisampleEnable = FALSE;
+	desc.ScissorEnable = FALSE;
+	desc.SlopeScaledDepthBias = 0;
+	m_d3dDevice->CreateRasterizerState(&desc,&mstate);
+	m_d3dContext->RSSetState(mstate.Get());
 	void* mptr = ((void*)m_d3dDevice.GetAddressOf());
 	float width = m_window->Bounds.Width;
 	float height = m_window->Bounds.Height;
@@ -215,7 +230,6 @@ void D3DRenderer::CreateWindowSizeDependentResources()
 
     D3D11_TEXTURE2D_DESC backBufferDesc = {0};
     backBuffer->GetDesc(&backBufferDesc);
-	//TODO: Width, height should be backbuffer.width and backbuffer.height
 	
     CD3D11_TEXTURE2D_DESC depthStencilDesc(
         DXGI_FORMAT_D24_UNORM_S8_UINT, 
@@ -224,7 +238,15 @@ void D3DRenderer::CreateWindowSizeDependentResources()
         1,
         1,
         D3D11_BIND_DEPTH_STENCIL);
-
+	  depthStencilDesc.MipLevels = 1;
+        depthStencilDesc.ArraySize = 1;
+        depthStencilDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+        depthStencilDesc.SampleDesc.Count = 1;
+        depthStencilDesc.SampleDesc.Quality = 0;
+        depthStencilDesc.Usage = D3D11_USAGE_DEFAULT;
+        depthStencilDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+        depthStencilDesc.CPUAccessFlags = 0;
+        depthStencilDesc.MiscFlags = 0;
     ComPtr<ID3D11Texture2D> depthStencil;
     DX::ThrowIfFailed(
         m_d3dDevice->CreateTexture2D(
@@ -233,11 +255,15 @@ void D3DRenderer::CreateWindowSizeDependentResources()
             &depthStencil
             )
         );
-
+	D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
+        depthStencilViewDesc.Format = depthStencilDesc.Format;
+        depthStencilViewDesc.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
+        depthStencilViewDesc.Flags = 0;
+        depthStencilViewDesc.Texture2D.MipSlice = 0;
     DX::ThrowIfFailed(
         m_d3dDevice->CreateDepthStencilView(
             depthStencil.Get(),
-            &CD3D11_DEPTH_STENCIL_VIEW_DESC(D3D11_DSV_DIMENSION_TEXTURE2D),
+			&depthStencilViewDesc,
             &m_depthStencilView
             )
         );
@@ -246,7 +272,7 @@ void D3DRenderer::CreateWindowSizeDependentResources()
         0.0f,
         0.0f,
         static_cast<float>(backBufferDesc.Width),
-        static_cast<float>(backBufferDesc.Height)
+        static_cast<float>(backBufferDesc.Height),D3D11_MIN_DEPTH,D3D11_MAX_DEPTH
         );
 
     m_d3dContext->RSSetViewports(1, &viewport);
@@ -309,7 +335,7 @@ void D3DRenderer::Clear()
     const float color[4] = { 0, 0, 1, 1.0f };
 	//Fails on Samsung netbooks for some reason (setrendertargets)
 	
-		m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(),m_depthStencilView.Get());
+	m_d3dContext->OMSetRenderTargets(1, m_renderTargetView.GetAddressOf(),m_depthStencilView.Get());
 	
 		m_d3dContext->ClearRenderTargetView(m_renderTargetView.Get(), color);
     m_d3dContext->ClearDepthStencilView(m_depthStencilView.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0);

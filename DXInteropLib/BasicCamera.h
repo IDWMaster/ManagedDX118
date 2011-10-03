@@ -6,12 +6,12 @@
 //// Copyright (c) Microsoft Corporation. All rights reserved
 
 #pragma once
-#include "pch.h"
+
 #include <d3d11.h>
 #include "BasicMath.h"
 
 // a simple camera class
-ref class BasicCamera
+class BasicCamera
 {
 
 private:

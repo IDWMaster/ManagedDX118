@@ -14,6 +14,8 @@ namespace DXInteropLib
  public:
 	 
 	 DirectContext(void* sender, void* context, float width, float height);
+	 void SetRotation(void* matrix, float rotX, float rotY, float rotZ);
+	 void SetBufferOnGPU(void* bufferptr, UINT slot);
 	 void* CreateVertexShader(array<byte>^ vertfile, array<byte>^ pixfile);
 	 static DirectContext^ getDefaultContext();
 	 void ApplyVertexShader(void* input);
@@ -30,7 +32,8 @@ namespace DXInteropLib
 	 void* CreateConstantBuffer(void* data, UINT size);
 	 void* CreateMatrix(bool withcamera);
 	 void UpdateMatrixCamera(void* matrixptr,array<float>^ position, array<float>^ lookat);
-	 
+	 void ResolveSetBuffer(void* bufferptr, UINT slot);
+	 void UpdateBuffer(void* data, void* buffer);
  private:
 	float _width;
 	float _height;
@@ -49,11 +52,13 @@ namespace DXInteropLib
  class Matrix  {
 public:
 	void Initialize();
+	void SetMatrixRotation(DirectContext^ context, float xrot, float yrot, float zrot);
 	//Creates a default camera defining the view and projection matrices
 	static Matrix CreateDefaultCamera(float width, float height);
 	///<summary>Uploads this matrix to the GPU</summary>
 	void* UploadMatrix(DirectContext^ context);
-	void SetCameraProperties(array<float>^ cameraposition, array<float>^ lookat);
+	void SetCameraProperties(array<float>^ cameraposition, array<float>^ lookat, DirectContext^ context);
+	void SetMatrixInternal(UINT slot, DirectContext^ context);
 	
 private:
 	
@@ -62,8 +67,12 @@ private:
 	bool hasModelViewProjection;
 	///A single matrix. Used only if hasModelViewProjection is set to FALSE.
 	float4x4 singlematrix;
-	BasicCamera^ underlyingcamera;
+	BasicCamera* underlyingcamera;
 	GPUMatrixData underlyingmatrices;
+	float rotationx;
+	float rotationy;
+	float rotationz;
+	void UpdateModelMatrix();
 };
 // WinRTComponent.h
 }

@@ -20,10 +20,24 @@ namespace ManagedDirectX
     {
         internal IntPtr internhandle;
         internal RenderContext interncontext;
+        public void SetModelRotation(float x, float y, float z)
+        {
+            unsafe
+            {
+                interncontext.underlyingcontext.SetRotation(internhandle.ToPointer(), x, y, z);
+            }
+        }
         internal DXMatrix(IntPtr handle, RenderContext context)
         {
             internhandle = handle;
             interncontext = context;
+        }
+        public void Activate(uint slot)
+        {
+            unsafe
+            {
+                interncontext.underlyingcontext.SetBufferOnGPU(internhandle.ToPointer(), slot);
+            }
         }
         internal bool hasCamera = false;
         public void SetCameraProperties(Vector3D cameraPosition, Vector3D cameraRotation)

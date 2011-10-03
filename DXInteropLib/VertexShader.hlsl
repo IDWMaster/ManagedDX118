@@ -34,8 +34,14 @@ struct PixelShaderOutput
 PixelShaderOutput main(VertextShaderInput input)
 {
     PixelShaderOutput output = (PixelShaderOutput)0;
-	//TODO: Matrix multiplication
-    output.position = float4(input.position,1.0);
+	//Model, view projection
+	float4 pos = float4(input.position,1.0);
+	pos = mul(pos,model);
+	pos = mul(pos,view);
+	
+	pos = mul(pos,projection);
+   
+	output.position = pos;
     output.textureUV = input.textureUV;
 
     // compute view space normal

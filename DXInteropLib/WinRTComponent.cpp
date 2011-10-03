@@ -10,7 +10,7 @@ using namespace DXInteropLib;
 namespace DXInteropLib {
 	//Context
 	void Matrix::Initialize() {
-	singlematrix = float4x4(0);
+	singlematrix = identity();
 	hasModelViewProjection = false;
 
 };
@@ -26,18 +26,19 @@ void* Matrix::UploadMatrix(DirectContext^ context) {
 };
 void DirectContext::UpdateMatrixCamera(void* matptr,array<float>^ position, array<float>^ lookat) {
 	Matrix* mtr = (Matrix*)matptr;
-	mtr->SetCameraProperties(position,lookat);
+	mtr->SetCameraProperties(position,lookat,this);
 	
 };
 void* DirectContext::CreateMatrix(bool withcamera) {
-	Matrix* mtptr;
+	Matrix* mtptr = (Matrix*)malloc(sizeof(Matrix));
 if(withcamera) {
 	
-	mtptr = &Matrix::CreateDefaultCamera(_width,_height);
+	Matrix mtrix = Matrix::CreateDefaultCamera(_width,_height);
+	memcpy(mtptr,&mtrix,sizeof(mtrix));
 } else {
 Matrix mtrix;
 mtrix.Initialize();
-mtptr = &mtrix;
+memcpy(mtptr,&mtrix,sizeof(mtrix));
 }
 mtptr->UploadMatrix(this);
 return mtptr;
@@ -48,20 +49,50 @@ Matrix Matrix::CreateDefaultCamera(float width, float height) {
 	float aspect = width/height;
 	Matrix mtrix;
 	mtrix.Initialize();
-	mtrix.underlyingmatrices.model = float4x4();
-	mtrix.underlyingmatrices.projection = float4x4();
-	mtrix.underlyingmatrices.view = float4x4();
-	mtrix.underlyingcamera = ref new BasicCamera();
-	mtrix.underlyingcamera->SetProjectionParameters(1,aspect,1,9999999);
-	mtrix.underlyingcamera->SetViewParameters(float3(0,0,0),float3(0,0,1),float3(0,1,0));
+
+	mtrix.underlyingmatrices.model = identity();
+	mtrix.underlyingmatrices.projection = identity();
+	mtrix.underlyingmatrices.view = identity();
+	mtrix.underlyingcamera = new BasicCamera();
+	mtrix.underlyingcamera->SetProjectionParameters(90,aspect,0.01f,100);
+	mtrix.underlyingcamera->SetViewParameters(float3(0,0,-1),float3(0,0,1),float3(0,1,0));
+	//TODO: Figure out why this isn't working!!!
 	mtrix.underlyingcamera->GetViewMatrix(&mtrix.underlyingmatrices.view);
 	mtrix.underlyingcamera->GetProjectionMatrix(&mtrix.underlyingmatrices.projection);
+	
 	mtrix.hasModelViewProjection = true;
 	return mtrix;
 };
-void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat) {
+void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat, DirectContext^ context) {
 	
 	underlyingcamera->SetViewParameters(float3(campos->Data[0],campos->Data[1],campos->Data[2]),float3(lat->Data[0],lat->Data[1],lat->Data[2]),float3(0,1,0));
+	underlyingcamera->GetViewMatrix(&underlyingmatrices.view);
+	context->UpdateBuffer(&underlyingmatrices,gpubuffer);
+};
+void Matrix::UpdateModelMatrix() {
+	if(hasModelViewProjection) {
+		
+		underlyingmatrices.model = mul(mul(rotationX(rotationx),rotationY(rotationy)),rotationZ(rotationz));
+		
+	}else {
+		singlematrix = mul(mul(rotationX(rotationx),rotationY(rotationy)),rotationZ(rotationz));
+	}
+};
+void Matrix::SetMatrixRotation(DirectContext^ context, float xrot, float yrot, float zrot) {
+rotationx = xrot;
+rotationy = yrot;
+rotationz = zrot;
+UpdateModelMatrix();
+if(hasModelViewProjection) {
+	context->UpdateBuffer(&underlyingmatrices,gpubuffer);
+}else {
+	context->UpdateBuffer(&singlematrix,gpubuffer);
+
+}
+};
+void DirectContext::SetRotation(void* matrix, float xrot, float yrot, float zrot) {
+	Matrix* mtrix  = (Matrix*)matrix;
+	mtrix->SetMatrixRotation(this,xrot,yrot,zrot);
 };
 	void* DirectContext::CreateConstantBuffer(void* data, UINT size) {
 		//TODO: Finish this
@@ -78,6 +109,23 @@ void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat) {
 		//mechanism. 
 		underlyingcontext->UpdateSubresource(buffer,0,nullptr,data,0,0);
 		return buffer;
+	};
+	void DirectContext::UpdateBuffer(void* data, void* lbuffer) {
+	ID3D11Buffer* buffer = (ID3D11Buffer*)lbuffer;
+
+		underlyingcontext->UpdateSubresource(buffer,0,nullptr,data,0,0);
+		
+	};
+	void Matrix::SetMatrixInternal(UINT slot, DirectContext^ context) {
+		context->ResolveSetBuffer(gpubuffer,slot);
+	};
+	void DirectContext::SetBufferOnGPU(void* bufferptr, UINT slot) {
+	Matrix* mtrix = (Matrix*)bufferptr;
+	mtrix->SetMatrixInternal(slot,this);
+	};
+	void DirectContext::ResolveSetBuffer(void* bufferptr, UINT slot) {
+	ID3D11Buffer* buffer = (ID3D11Buffer*)bufferptr;
+	underlyingcontext->VSSetConstantBuffers(slot,1,&buffer);
 	};
 	DirectContext::DirectContext(void* sender, void* context, float width, float height) {
         //Device initialization
@@ -261,6 +309,7 @@ void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat) {
 	samplerDescription.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
 	samplerDescription.MipLODBias = 0.0f;
 	samplerDescription.MinLOD = 0;
+	
 	samplerDescription.MaxLOD = D3D11_FLOAT32_MAX;
 	samplerDescription.ComparisonFunc = D3D11_COMPARISON_NEVER;
 	samplerDescription.BorderColor[0] = 0.0f;
