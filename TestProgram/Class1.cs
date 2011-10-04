@@ -30,7 +30,7 @@ namespace TestProgram
                 }
             maincontext.Draw(vertcount);
                 }
-            rotation += 0.1f;
+            rotation -= 0.4f;
 
         }
         DXMatrix defaultmatrix;
@@ -39,17 +39,9 @@ namespace TestProgram
         RenderContext maincontext;
         async void beginexecblock()
         {
-            if ((await Windows.Storage.ApplicationData.Current.RoamingFolder.GetFilesAsync()).Count == 0)
-            {
-                await ApplicationData.Current.RoamingFolder.CreateFileAsync("testfile.txt");
-                ApplicationData.Current.SignalDataChanged();
-                Windows.UI.Popups.MessageDialog tdlg = new Windows.UI.Popups.MessageDialog("Roaming file creation success", "Sync status");
-                await tdlg.ShowAsync();
-
-            }
-            try
-            {
-                DateTime started = DateTime.Now;
+            
+            
+            
                 RenderContext mtext = new RenderContext();
                 maincontext = mtext;
                 StorageFolder folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -67,18 +59,12 @@ namespace TestProgram
                 byte[] mgram = new byte[file.Size];
                 await mreader.LoadAsync((uint)file.Size);
                 mreader.ReadBytes(mgram);
-                try
-                {
+                
                     defaultshader = mtext.CreateShader(dgram, mgram);
                     mtext.InitializeLayout(dgram);
                     defaultshader.Apply();
                     mtext.OnRenderFrame += onrenderframe;
-                }
-                catch (Exception er)
-                {
-                    Windows.UI.Popups.MessageDialog mdlg = new Windows.UI.Popups.MessageDialog(er.ToString(),"Fatal error");
-                    mdlg.ShowAsync().Start();
-                }
+                
                 IStorageFile[] files = (await folder.GetFilesAsync()).ToArray();
                 bool founddata = false;
                 foreach (IStorageFile et in files)
@@ -126,6 +112,7 @@ namespace TestProgram
                 }
                 Texture2D mtex = maincontext.createTexture2D(rawdata, width, height);
                 mtex.Draw();
+                #region Cube
                 List<VertexPositionNormalTexture> triangle = new List<VertexPositionNormalTexture>();
                 float z = 0;
                
@@ -136,22 +123,60 @@ namespace TestProgram
                 triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z), new Vector3(1, 1, 1), new Vector2(0, 0)));
                 triangle.Add(new VertexPositionNormalTexture(new Vector3(1,0,z),new Vector3(1,1,1),new Vector2(1,0)));
                 triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z), new Vector3(1, 1, 1), new Vector2(1, 1)));
-               // triangle.Reverse();
+               // Triangle 3
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 0, z),new Vector3(1,1,1),new Vector2(0,0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z+1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 0, z + 1), new Vector3(1, 1, 1), new Vector2(0, 1)));
+                //Triangle 4
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 0, z), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z), new Vector3(1, 1, 1), new Vector2(1, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z + 1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                
+                //Triangle 5
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, z + 1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z + 1), new Vector3(1, 1, 1), new Vector2(0, 1)));
+                //Triangle 6
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, z), new Vector3(1, 1, 1), new Vector2(1, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, z + 1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                //Triangle 7
+
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z+1), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z+1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, z+1), new Vector3(1, 1, 1), new Vector2(0, 1)));
+                //Triangle 8
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 0, z+1), new Vector3(1, 1, 1), new Vector2(0, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 0, z+1), new Vector3(1, 1, 1), new Vector2(1, 0)));
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, z+1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                //Top face
+                //Triangle 9
+                //0,0
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, 0), new Vector3(1, 0, 1), new Vector2(0, 0)));
+                //1,1
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, 1), new Vector3(1, 0, 0), new Vector2(1, 1)));
+                //0,1
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, 1), new Vector3(0, 1, 1), new Vector2(0, 1)));
+                //Triangle 10
+                //0,0
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(0, 1, 0), new Vector3(1, 1, 1), new Vector2(0, 0)));
+          
+                //1,0
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, 0), new Vector3(1, 1, 1), new Vector2(1, 0)));
+                
+                //1,1
+                triangle.Add(new VertexPositionNormalTexture(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector2(1, 1)));
+                #endregion
                 byte[] gpudata = VertexPositionNormalTexture.Serialize(triangle.ToArray());
                 
                 VertexBuffer mbuffer = maincontext.createVertexBuffer(gpudata,VertexPositionNormalTexture.Size);
                 mbuffer.Apply(VertexPositionNormalTexture.Size);
                 vertcount = triangle.Count;
-                Windows.UI.Popups.MessageDialog tdlg = new Windows.UI.Popups.MessageDialog("Unit tests successfully completed\nShader creation: Success\nTexture load: Success\nVertex buffer creation: Success\nTime:"+(DateTime.Now-started).ToString(), "Results");
-                tdlg.ShowAsync().Start();
+                
                 defaultmatrix = maincontext.createMatrix(true);
+                defaultmatrix.SetCameraProperties(new Vector3D(0, 2, -1.5f), new Vector3D(0, 0, 0));
                 defaultmatrix.Activate(0);
-            }
-            catch (Exception er)
-            {
-                Windows.UI.Popups.MessageDialog tdlg = new Windows.UI.Popups.MessageDialog(er.ToString(), "Fatal error");
-                tdlg.ShowAsync().Start();
-            }
+            
         }
 
     }

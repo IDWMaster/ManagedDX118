@@ -16,8 +16,9 @@ SamplerState linearSampler : register(s0);
 struct PixelShaderInput
 {
     float4 position : SV_POSITION;
-    float3 normal : NORMAL;
+    float4 normal : NORMAL;
 	float2 textureUV : TEXCOORD0;
+	float3 light:NORMAL1;
 };
 
 //--------------------------------------------------------------------------------------
@@ -26,6 +27,6 @@ struct PixelShaderInput
 float4 main(PixelShaderInput input) : SV_Target
 {
     //return float4(1.0,1.0,1.0,1.0);
-   return diffuseTexture.Sample(linearSampler, input.textureUV);
+   return diffuseTexture.Sample(linearSampler, input.textureUV)*saturate(dot(input.light,input.normal));
 }
 //--------------------------------------------------------------------------------------

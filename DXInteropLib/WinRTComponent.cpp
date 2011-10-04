@@ -72,10 +72,10 @@ void Matrix::SetCameraProperties(array<float>^ campos, array<float>^ lat, Direct
 void Matrix::UpdateModelMatrix() {
 	if(hasModelViewProjection) {
 		
-		underlyingmatrices.model = mul(mul(rotationX(rotationx),rotationY(rotationy)),rotationZ(rotationz));
+		underlyingmatrices.model = mul(mul(rotationY(rotationy),rotationX(rotationx)),rotationZ(rotationz));
 		
 	}else {
-		singlematrix = mul(mul(rotationX(rotationx),rotationY(rotationy)),rotationZ(rotationz));
+		singlematrix = mul(mul(rotationY(rotationy),rotationX(rotationx)),rotationZ(rotationz));
 	}
 };
 void Matrix::SetMatrixRotation(DirectContext^ context, float xrot, float yrot, float zrot) {

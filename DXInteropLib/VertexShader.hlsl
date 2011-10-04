@@ -24,8 +24,9 @@ struct VertextShaderInput
 struct PixelShaderOutput
 {
     float4 position : SV_POSITION;
-    float3 normal : NORMAL;
+    float4 normal : NORMAL;
     float2 textureUV : TEXCOORD0;
+	float3 light:NORMAL1;
 };
 
 //--------------------------------------------------------------------------------------
@@ -40,12 +41,12 @@ PixelShaderOutput main(VertextShaderInput input)
 	pos = mul(pos,view);
 	
 	pos = mul(pos,projection);
-   
+   output.light = normalize(float3(1,0,0));
 	output.position = pos;
     output.textureUV = input.textureUV;
 
     // compute view space normal
-    output.normal = input.normal;
+    output.normal = float4(input.normal.xyz,1.0);
 
     return output;
 }

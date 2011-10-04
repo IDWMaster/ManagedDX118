@@ -34,15 +34,15 @@
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\ManagedDirectX\bin\Debug\ManagedDirectX.dll">
       <PackagePath>ManagedDirectX.dll</PackagePath>
-      <Modified>2011-10-02T22:51:15.454</Modified>
+      <Modified>2011-10-03T19:52:31.472</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.pdb">
       <PackagePath>TestProgram.pdb</PackagePath>
-      <Modified>2011-10-02T22:51:27.837</Modified>
+      <Modified>2011-10-03T19:52:46.856</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\bin\Debug\TestProgram.winmd">
       <PackagePath>TestProgram.winmd</PackagePath>
-      <Modified>2011-10-02T22:51:27.882</Modified>
+      <Modified>2011-10-03T19:52:46.968</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\TestProgram\test.jpg">
       <PackagePath>TestProgram\test.jpg</PackagePath>
@@ -54,35 +54,35 @@
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.exe">
       <PackagePath>DirectXApplication1.exe</PackagePath>
-      <Modified>2011-10-02T22:52:25.706</Modified>
+      <Modified>2011-10-03T19:53:39.772</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DirectXApplication1.pdb">
       <PackagePath>DirectXApplication1.pdb</PackagePath>
-      <Modified>2011-10-02T22:52:25.702</Modified>
+      <Modified>2011-10-03T19:53:39.768</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.dll">
       <PackagePath>DXInteropLib.dll</PackagePath>
-      <Modified>2011-10-02T22:51:01.193</Modified>
+      <Modified>2011-10-03T19:52:21.087</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.pdb">
       <PackagePath>DXInteropLib.pdb</PackagePath>
-      <Modified>2011-10-02T22:51:01.192</Modified>
+      <Modified>2011-10-03T19:52:21.087</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\DXInteropLib.winmd">
       <PackagePath>DXInteropLib.winmd</PackagePath>
-      <Modified>2011-10-02T22:51:01.980</Modified>
+      <Modified>2011-10-03T19:52:21.507</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\PixelShader.cso">
       <PackagePath>DXInteropLib\PixelShader.cso</PackagePath>
-      <Modified>2011-09-30T10:13:19.027</Modified>
+      <Modified>2011-10-03T19:51:29.508</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\DXInteropLib\VertexShader.cso">
       <PackagePath>DXInteropLib\VertexShader.cso</PackagePath>
-      <Modified>2011-10-02T17:57:47.026</Modified>
+      <Modified>2011-10-03T19:52:11.160</Modified>
     </AppXPackagedFile>
     <AppXPackagedFile Include="C:\Users\webadm\Documents\Visual Studio 11\Projects\DirectXApplication1\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2011-10-02T22:52:38.061</Modified>
+      <Modified>2011-10-03T19:53:50.539</Modified>
     </AppXPackagedFile>
   </ItemGroup>
   <ItemGroup>
